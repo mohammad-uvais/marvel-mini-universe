@@ -1,38 +1,133 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body {
+  background-color: black;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Style the top navbar links */
+.topnav {
+  padding: 0;
+  background-color: maroon;
+}
+.topnav a {
+  padding: 15px;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.topnav a:hover {
+  background-color: white;
+  color: maroon;
+}
+.activ {
+  background-color: white;
+  color: maroon !important;
+}
+
+/* Style the Main Heading */
+h1 {
+  font-size: 3rem;
+  padding-top: 15px;
+  text-align: center;
+  text-shadow: 0px 0px 5px maroon, 0px 0px 5px white;
+}
+
+/* Style the Loader */
+div.loader {
+  width: 100%;
+  height: 420px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style the Main Content Container */
+.main-container {
+  background: maroon;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px maroon, 0px 0px 5px white;
+}
+
+/* Style the Characters' Card */
+.card-characters {
+  box-shadow: 0px 0px 10px black;
+  width: 100%;
+  background: #222;
+  border: 2px solid #222;
+  border-radius: 10px;
+  color: rgba(250, 250, 250, 0.8);
+  margin-bottom: 2rem;
+}
+.character-img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* Style the common elements */
+.dtl-name {
+  margin-bottom: 10px;
+  padding: 5px;
+  color: #222;
+  background-color: #eeeeee;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.dtl-container {
+  color: #222;
+  background-color: #eeeeee;
+  padding: 5px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  list-style-position: inside;
+}
+.btn-url {
+  color: rgba(250, 250, 250, 0.8);
+  border: 5px solid maroon;
+  background: maroon;
+  text-decoration: none;
+  transition: all .5s ease;
+}
+.btn-url:hover, .btn-url:focus {
+  color: rgba(250, 250, 250, 0.8);
+  background: maroon;
+  border: 5px solid #fff;
+  text-decoration: underline;
+}
+.btn-page {
+    border: 5px solid maroon;
+    font-size: 20px;
+    background: maroon;
+    color: white;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.btn-page:hover, .btn-page:focus {
+  color: white;
+  background: maroon;
+  border: 5px solid white;
+  text-decoration: underline;
+}
+
+/* Style the Comics' Card */
+.card-comics {
+  box-shadow: 0px 0px 10px black;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  background: #222;
+  color: rgba(250, 250, 250, 0.8);
+  margin-bottom: 2rem;
+}
+.comics-img {
+  max-width: 100%;
+  height: 100%;
 }
