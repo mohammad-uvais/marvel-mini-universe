@@ -7,13 +7,13 @@ class Pagination extends React.Component {
              <li class="page-item">
                  <button type="button"
                      className="page-link btn-page"
-                     onClick={this.handlePrevClick}>Prev
+                     onClick={this.props.prev}>Prev
                  </button>
              </li>
              <li class="page-item">
                  <button type="button"
                      className="page-link btn-page"
-                     onClick={this.handleNextClick}>Next
+                     onClick={this.props.next}>Next
                  </button>
              </li>
          </ul>

@@ -47,7 +47,8 @@ class Comics extends React.Component {
             <h1>
                C O M I C S
             </h1>
-            {this.state.loading ? <Loader /> :
+            {this.state.loading ?
+            <Loader /> :
                <div className="main-container">
                   {this.state.comics.map((comics, index) => {
                      return (
@@ -151,7 +152,7 @@ class Comics extends React.Component {
                   })}
                </div>
             }
-            <Pagination />
+            <Pagination prev={this.handlePrevClick} next={this.handleNextClick}/>
          </div>
       )
    }

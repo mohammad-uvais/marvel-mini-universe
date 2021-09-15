@@ -8,8 +8,8 @@ class Characters extends React.Component {
       super(props);
       this.state = {
          characters: [],
-         limit:20,
-         offset: 0, 
+         limit:18,
+         offset: 20, 
          loading: false,
       }  
    }
@@ -30,14 +30,14 @@ class Characters extends React.Component {
       this.setState({loading: true}, this.apiCall);
    }
    handleNextClick = () => {
-      this.setState({offset: this.state.offset + 20}, this.apiCall);
+      this.setState({offset: this.state.offset + 100}, this.apiCall);
       
    }
    handlePrevClick = () => {
       if (this.state.offset !== 0) {
-         this.setState({offset: this.state.offset - 20}, this.apiCall);
+         this.setState({offset: this.state.offset - 100}, this.apiCall);
       } else {
-         this.setState({offset: 0})
+         this.setState({offset: 100})
       }      
    }
    render() {
@@ -47,7 +47,8 @@ class Characters extends React.Component {
             <h1>
                C H A R A C T E R S
             </h1>
-            {this.state.loading ? <Loader /> :
+            {this.state.loading ?
+            <Loader /> :
                <div className="main-container">
                   <div className="container mx-auto mt-4">
                      <div className="row">
@@ -124,7 +125,7 @@ class Characters extends React.Component {
                   </div>
                </div>
             }
-            <Pagination />
+            <Pagination prev={this.handlePrevClick} next={this.handleNextClick}/>
          </div>
       )
    }
