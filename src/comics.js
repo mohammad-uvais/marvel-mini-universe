@@ -1,15 +1,20 @@
 import React from 'react';
 import CryptoJS from 'crypto-js';
 import Loader from './components/loader';
+import Name from './components/name';
+import Description from './components/description';
+import Details from './components/details';
+import Links from './components/links';
 import Pagination from './components/pagination';
+import Images from './components/images';
 
 class Comics extends React.Component {
    constructor(props) {
       super(props);
       this.state = {
          comics: [],
-         limit:20,
-         offset: 0, 
+         limit:15,
+         offset: 150,
          loading: false,
       }  
    }
@@ -30,12 +35,12 @@ class Comics extends React.Component {
       this.setState({loading: true}, this.apiCall);
    }
    handleNextClick = () => {
-      this.setState({offset: this.state.offset + 20}, this.apiCall);
+      this.setState({offset: this.state.offset + 100}, this.apiCall);
       
    }
    handlePrevClick = () => {
       if (this.state.offset !== 0) {
-         this.setState({offset: this.state.offset - 20}, this.apiCall);
+         this.setState({offset: this.state.offset - 100}, this.apiCall);
       } else {
          this.setState({offset: 0})
       }      
@@ -43,7 +48,7 @@ class Comics extends React.Component {
    render() {
       console.log(this.state.comics);   
       return (
-         <div>
+         <div className="full-container">
             <h1>
                C O M I C S
             </h1>
@@ -55,97 +60,37 @@ class Comics extends React.Component {
                         <div className="card mb-3 card-comics">
                            <div className="row no-gutters">
                               <div className="col-md-3">
-                                 <img src={comics.thumbnail.path + "." + comics.thumbnail.extension} alt="thumbnail" className="card-img comics-img" />
+                                 <img src={comics.thumbnail.path + "." + comics.thumbnail.extension} alt="thumbnail" className="card-img" />
                               </div>
                               <div className="col-md-6">
                                  <div className="card-body">
-                                    <h3 className="card-title">{comics.title}</h3>
-                                    <p className="card-text">{comics.description !== null ? comics.description : "No Description Available"}</p>
-                                    <p>Series: <a href={comics.series.resourceURI}>
-                                       {comics.series.name}
-                                    </a>
+                                    <Name name={comics.title} />
+                                    <Description desc={comics.description} />
+                                    {/* <p className="card-text">
+                                       {(comics.description !== null) ?
+                                          comics.description :
+                                          "No Description Available"}
+                                    </p> */}
+                                    <p>
+                                       Series: <a href={comics.series.resourceURI}>
+                                          {comics.series.name}</a>
                                     </p>
-                                    <details>
-                                       <summary className="dtl-name">
-                                          Variants
-                                       </summary>
-                                       <ol className="dtl-container">
-                                          {comics.variants.map((variants, i) => {
-                                             return (
-                                                <li key={i} >
-                                                   <a href={variants.resourceURI}
-                                                      target="_blank"
-                                                      rel="noreferrer">
-                                                      {variants.name}
-                                                   </a>
-                                                </li>
-                                             )
-                                          })
-                                          }
-                                       </ol>
-                                    </details>
-                                    <details>
-                                       <summary className="dtl-name">
-                                          {comics.creators.available} Creator/s Available
-                                       </summary>
-                                       <ol className="dtl-container">
-                                          {comics.creators.items.map((items, i) => {
-                                             return (
-                                                <li key={i} >
-                                                   <a href={items.resourceURI}
-                                                      target="_blank"
-                                                      rel="noreferrer">
-                                                      {items.name}({items.role})
-                                                   </a>
-                                                </li>
-                                             )
-                                          })
-                                          }
-                                       </ol>
-                                    </details>
-                                    <details>
-                                       <summary className="dtl-name">
-                                          {comics.stories.available} Storie/s Available
-                                       </summary>
-                                       <ol className="dtl-container">
-                                          {comics.stories.items.map((items, i) => {
-                                             return (
-                                                <li key={i} >
-                                                   <a href={items.resourceURI}
-                                                      target="_blank"
-                                                      rel="noreferrer">
-                                                      {items.name}
-                                                   </a>
-                                                </li>
-                                             )
-                                          })
-                                          }
-                                       </ol>
-                                    </details>
-                                    <div className="urls">
-                                       {comics.urls.map((urls, i) => {
-                                          return (
-                                             <a href={urls.url} className="btn btn-url mr-2" target="_blank" rel="noreferrer">
-                                                {urls.type.charAt(0).toUpperCase() + urls.type.slice(1)}
-                                             </a>
-                                          )
-                                       })
-                                       }
-                                    </div>
+                                    <Details
+                                       type="Variants"
+                                       item={comics.variants} />
+                                    <Details
+                                       avail={comics.creators.available}
+                                       type="Creator/s"
+                                       item={comics.creators.items} />
+                                    <Details
+                                       avail={comics.stories.available}
+                                       type="Storie/s"
+                                       item={comics.stories.items} />
+                                    <Links link={comics.urls} />
                                     <p class="card-text"><small class="text-muted">Number of Pages: {comics.pageCount}</small></p>
                                  </div>
                               </div>
-                              <div className="col-md-3">
-                                 <div class="card-columns">
-                                    {comics.images.map((images, i) => {
-                                       return (
-                                          <div key={i} class="card">
-                                             <img src={images.path + "." + images.extension} class="card-img comics-img" alt="thumbnail" />
-                                          </div>
-                                       )
-                                    })}
-                                 </div>
-                                 </div>
+                              <Images image={comics.images} />
                            </div>
                         </div>
                      )

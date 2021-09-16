@@ -4,7 +4,7 @@ import './App.css';
 class App extends React.Component {
   render() {
      return (
-      <nav className="navbar navbar-expand-sm topnav justify-content-center">
+      <nav className="navbar navbar-expand-sm topnav justify-content-center fixed-top">
          <ul className="navbar-nav">
             <li className="nav-item">
                <a className={window.location.pathname === "/" ? 'nav-link activ' : 'nav-link'} href="/">HOME</a>

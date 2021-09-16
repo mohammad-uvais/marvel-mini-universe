@@ -1,6 +1,10 @@
 import React from 'react';
 import CryptoJS from 'crypto-js';
 import Loader from './components/loader';
+import Name from './components/name';
+import Description from './components/description';
+import Details from './components/details';
+import Links from './components/links';
 import Pagination from './components/pagination';
 
 class Characters extends React.Component {
@@ -9,7 +13,7 @@ class Characters extends React.Component {
       this.state = {
          characters: [],
          limit:18,
-         offset: 20, 
+         offset: 50, 
          loading: false,
       }  
    }
@@ -30,12 +34,12 @@ class Characters extends React.Component {
       this.setState({loading: true}, this.apiCall);
    }
    handleNextClick = () => {
-      this.setState({offset: this.state.offset + 100}, this.apiCall);
+      this.setState({offset: this.state.offset + 50}, this.apiCall);
       
    }
    handlePrevClick = () => {
       if (this.state.offset !== 0) {
-         this.setState({offset: this.state.offset - 100}, this.apiCall);
+         this.setState({offset: this.state.offset - 50}, this.apiCall);
       } else {
          this.setState({offset: 100})
       }      
@@ -43,7 +47,7 @@ class Characters extends React.Component {
    render() {
       console.log(this.state.characters);   
       return (
-         <div>
+         <div className="full-container">
             <h1>
                C H A R A C T E R S
             </h1>
@@ -59,63 +63,21 @@ class Characters extends React.Component {
                                     <img className="character-img" src={ characters.thumbnail.path + "." + characters.thumbnail.extension }
                                     alt="thumbnail" />
                                     <div className="card-body">
-                                       <h4 className="card-title">{ characters.name }</h4>
-                                       <p className="card-text">{ characters.description !== "" ? characters.description : "No Description Available" }</p>
-                                       <details>
-                                          <summary className="dtl-name">
-                                             { characters.comics.available } Comics Available
-                                          </summary>
-                                          <ol className="dtl-container">
-                                             { characters.comics.items.map((items, i) => {
-                                                return (
-                                                   <li key={i}>
-                                                      {items.name}
-                                                   </li>
-                                                )
-                                                })
-                                             }
-                                          </ol>
-                                       </details>
-                                       <details>
-                                          <summary className="dtl-name">
-                                             { characters.series.available } Series Available
-                                          </summary>
-                                          <ol className="dtl-container">
-                                             { characters.series.items.map((items, i) => {
-                                                return (
-                                                   <li key={i}>
-                                                      {items.name}
-                                                   </li>
-                                                )
-                                                })
-                                             }
-                                          </ol>
-                                       </details>
-                                       <details>
-                                          <summary className="dtl-name">
-                                             {characters.stories.available} Stories Available
-                                          </summary>
-                                          <ol className="dtl-container">
-                                             {characters.stories.items.map((items, i) => {
-                                                return (
-                                                   <li key={i} >
-                                                      {items.name}
-                                                   </li>
-                                                )
-                                             })
-                                             }
-                                          </ol>
-                                       </details>
-                                       <div className="urls">
-                                             { characters.urls.map((urls, i) => {
-                                                return (
-                                                   <a href={urls.url} className="btn btn-url mr-2" target="_blank" rel="noreferrer">
-                                                      {urls.type.charAt(0).toUpperCase() + urls.type.slice(1)}
-                                                   </a>
-                                                )
-                                                })
-                                             }
-                                       </div>
+                                       <Name name={characters.name} />
+                                       <Description desc={characters.description} />
+                                       <Details
+                                       type="Comics"
+                                       avail={characters.comics.available}
+                                       item={characters.comics.items} />
+                                       <Details
+                                       type="Series"
+                                       avail={characters.series.available}
+                                       item={characters.series.items} />
+                                       <Details
+                                       type="Stories"
+                                       avail={characters.stories.available}
+                                       item={characters.stories.items} />
+                                       <Links link={characters.urls} />
                                     </div>
                                  </div>
                               </div>

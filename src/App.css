@@ -12,7 +12,7 @@ body {
   background-color: maroon;
 }
 .topnav a {
-  padding: 15px;
+  padding: 16px;
   font-size: 20px;
   color: white;
   text-align: center;
@@ -28,6 +28,9 @@ body {
   color: maroon !important;
 }
 
+.full-container {
+  margin-top: 3.8rem;
+}
 /* Style the Main Heading */
 h1 {
   font-size: 3rem;
@@ -96,6 +99,7 @@ div.loader {
   background: maroon;
   text-decoration: none;
   transition: all .5s ease;
+  margin-bottom: 0.5rem;
 }
 .btn-url:hover, .btn-url:focus {
   color: rgba(250, 250, 250, 0.8);
@@ -128,7 +132,15 @@ div.loader {
   color: rgba(250, 250, 250, 0.8);
   margin-bottom: 2rem;
 }
-.comics-img {
+/* .card-img {
+  border: none;
+  border-radius: 0;
   max-width: 100%;
-  height: 100%;
+  height: auto;
+} */
+.comics-img {
+  border: none;
+  border-radius: 0;
+  max-width: 100%;
+  height: auto;
 }
