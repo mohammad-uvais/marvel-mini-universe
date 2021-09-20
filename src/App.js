@@ -12,7 +12,7 @@ import Contact from './contact.js';
 class App extends React.Component {
   render() {
      return (
-        <HashRouter basename="/">
+        <HashRouter basename="/marvel-mini-universe">
         <Navbar />
         <Switch>
            <Route exact path='/' component={Home}/>
