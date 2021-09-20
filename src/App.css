@@ -55,7 +55,7 @@ div.loader {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  margin: 20px;
+  margin: 20px 20px 125px 20px;
   border-radius: 20px;
   box-shadow: 0 0 10px maroon, 0px 0px 5px white;
 }
@@ -143,4 +143,26 @@ div.loader {
   border-radius: 0;
   max-width: 100%;
   height: auto;
+}
+
+.bg-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.bg-img {
+  opacity: 0.2;
+  position:absolute;
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  height: auto;
+}
+.bg-content {
+  margin-top: 1rem;
+  text-align: justify;
+  position: relative;
+}
+.bg-content p {
+  margin-top: 2rem;
+  font-size: 1.5rem;
 }

@@ -1,28 +1,27 @@
 import React from 'react';
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import './App.css';
+import Navbar from './components/navbar';
+import Home from './home.js';
+// import About from './about.js';
+import Characters from './characters.js';
+import Comics from './comics.js';
+import Contact from './contact.js';
+
 
 class App extends React.Component {
   render() {
      return (
-      <nav className="navbar navbar-expand-sm topnav justify-content-center fixed-top">
-         <ul className="navbar-nav">
-            <li className="nav-item">
-               <a className={window.location.pathname === "/" ? 'nav-link activ' : 'nav-link'} href="/">HOME</a>
-            </li>
-            <li className="nav-item">
-               <a className={window.location.pathname === "/about" ? 'nav-link activ' : 'nav-link'} href="/about">ABOUT</a>
-            </li>
-            <li className="nav-item">
-               <a className={window.location.pathname === "/characters" ? 'nav-link activ' : 'nav-link'} href="/characters">CHARACTERS</a>
-            </li>
-            <li className="nav-item">
-               <a className={window.location.pathname === "/comics" ? 'nav-link activ' : 'nav-link'} href="/comics">COMICS</a>
-            </li>
-            <li className="nav-item">
-               <a className={window.location.pathname === "/contact" ? 'nav-link activ' : 'nav-link'} href="/contact">CONTACT</a>
-            </li>
-         </ul>
-      </nav>        
+        <BrowserRouter>
+        <Navbar />
+        <Switch>
+           <Route exact path='/' component={Home}/>
+           {/* <Route path='/about' component={About}/> */}
+           <Route path='/characters' component={Characters}/>
+           <Route path='/comics' component={Comics}/>
+           <Route path='/contact' component={Contact}/>
+        </Switch>
+        </BrowserRouter>       
      )
   }
 }
