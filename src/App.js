@@ -12,7 +12,7 @@ import Contact from './contact.js';
 class App extends React.Component {
   render() {
      return (
-        <BrowserRouter basename={process.env.mohammad-uvais.github.io }>
+        <BrowserRouter basename={process.env.mohammad-uvais.github.io/marvel-mini-universe/ }>
         <Navbar />
         <Switch>
            <Route exact path='/' component={Home}/>
