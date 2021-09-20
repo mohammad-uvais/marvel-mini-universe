@@ -1,8 +1,11 @@
 import React from 'react';
+import Navbar from './components/navbar';
 
 class Home extends React.Component {
     render() {
        return (
+          <>
+          <Navbar />
           <div className="full-container bg-wrap">
              <img src="https://media.wired.com/photos/5955ceabcbd9b77a41915cf6/191:100/w_1280,c_limit/marvel-characters.jpg" alt="hero" className="bg-img"/>
              <div className="bg-content container">
@@ -17,6 +20,7 @@ class Home extends React.Component {
                 </div>
              </div>
           </div>
+          </>
        )
     }
   }

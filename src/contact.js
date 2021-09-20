@@ -1,13 +1,18 @@
 import React from 'react';
+import Navbar from './components/navbar';
 import Form from './components/survey-form-page/survey-form';
+
 
 class Contact extends React.Component {
     render() {
        return (
+          <>
+          <Navbar />
           <div className="full-container">
              <h1>Connect With Us</h1>
              <Form />
           </div>
+          </>
        )
     }
   }

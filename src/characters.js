@@ -1,5 +1,6 @@
 import React from 'react';
 import CryptoJS from 'crypto-js';
+import Navbar from './components/navbar';
 import Loader from './components/loader';
 import Name from './components/name';
 import Description from './components/description';
@@ -47,6 +48,8 @@ class Characters extends React.Component {
    render() {
       console.log(this.state.characters);   
       return (
+         <>
+         <Navbar />
          <div className="full-container">
             <h1>
                C H A R A C T E R S
@@ -89,6 +92,7 @@ class Characters extends React.Component {
             }
             <Pagination prev={this.handlePrevClick} next={this.handleNextClick}/>
          </div>
+         </>
       )
    }
 }
