@@ -1,9 +1,9 @@
 import React from 'react';
-import Navbar from './components/navbar';
+import Navbar from './components/Navbar';
 import Form from './components/survey-form-page/survey-form';
 
 
-class Contact extends React.Component {
+class Connect extends React.Component {
     render() {
        return (
           <>
@@ -17,4 +17,4 @@ class Contact extends React.Component {
     }
   }
 
-export default Contact;
+export default Connect;

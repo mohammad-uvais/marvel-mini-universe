@@ -1,12 +1,12 @@
 import React from 'react';
 import CryptoJS from 'crypto-js';
-import Navbar from './components/navbar';
-import Loader from './components/loader';
-import Name from './components/name';
-import Description from './components/description';
-import Details from './components/details';
-import Links from './components/links';
-import Pagination from './components/pagination';
+import Navbar from './components/Navbar';
+import Loader from './components/Loader';
+import Name from './components/Name';
+import Description from './components/Description';
+import Details from './components/Details';
+import Links from './components/Links';
+import Pagination from './components/Pagination';
 
 class Characters extends React.Component {
    constructor(props) {
