@@ -9,9 +9,7 @@ function Details(props) {
             <ol className="dtl-container">
                 {props.items.map((item, i) => {
                     return (
-                        <li key={i}>
-                            {item.name} ({item.role})
-                        </li>
+                        <li key={i}>{item.name} ({item.role})</li>
                     )
                 })
                 }
