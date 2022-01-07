@@ -4,12 +4,12 @@ import './survey-form.css';
 function Form() {
   return (
     <div className="form-container">
-    <header className="form-header">
-      <h2 id="title">Marvel Fans Survey Form</h2>
-      <p id="description">
-        Thank you for taking the time to help us knowing your interests
-      </p>
-    </header>
+      <header className="form-header">
+        <h2 id="title">Marvel Fans Survey Form</h2>
+        <p id="description">
+          Thank you for taking the time to help us knowing your interests
+        </p>
+      </header>
       <form id="survey-form">
         <div className="form-group">
           <label htmlFor="name" id="name-label">
@@ -32,7 +32,7 @@ function Form() {
         <div className="form-group">
           <p>Which part of the App did you liked the most?</p>
           <select id="dropdown" className="form-control" name="age-group">
-            <option selected disabled>Select group</option>
+            <option value="" disabled>Select group</option>
             <option value="child">Characters Section</option>
             <option value="adult">Comics Section</option>
             <option value="old">The overall Theme and Style of the App</option>
@@ -78,7 +78,7 @@ function Form() {
           </button>
         </div>
       </form>
-  </div>
+    </div>
   )
 }
 

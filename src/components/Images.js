@@ -3,11 +3,14 @@ import React from 'react';
 function Images(props) {
     return (
         <div className="col-md-3">
-            <div class="card-columns">
-                {props.image.map((images, i) => {
+            <div className="card-columns">
+                {props.images.map((image, i) => {
                     return (
-                        <div key={i} class="card">
-                            <img src={images.path + "." + images.extension} class="card-img comics-img" alt="thumbnail" />
+                        <div key={i} className="card">
+                            <img
+                            src={image.path + "." + image.extension}
+                            alt="thumbnail"
+                            className="card-img comics-img" />
                         </div>
                     )
                 })}

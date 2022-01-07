@@ -4,10 +4,10 @@ function Details(props) {
     return (
         <details>
             <summary className="dtl-name">
-                {props.avail} {props.type} Available
+                {props.quantity} {props.type} Available
             </summary>
             <ol className="dtl-container">
-                {props.item.map((item, i) => {
+                {props.items.map((item, i) => {
                     return (
                         <li key={i}>
                             {item.name} ({item.role})
