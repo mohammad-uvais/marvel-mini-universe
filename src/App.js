@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route, Switch, HashRouter } from 'react-router-dom';
 
-import Home from './pages/Home.js';
-import Comics from './pages/Comics.js';
-import Connect from './pages/Connect.js';
-import Characters from './pages/Characters.js';
+import Home from './pages/home.js';
+import Comics from './pages/comics.js';
+import Connect from './pages/connect.js';
+import Characters from './pages/characters.js';
 
 import './App.css';
 

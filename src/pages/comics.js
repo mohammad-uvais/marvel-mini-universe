@@ -1,14 +1,14 @@
 import React from 'react';
 import CryptoJS from 'crypto-js';
 
-import Name from '../components/Name';
-import Links from '../components/Links';
-import Navbar from '../components/Navbar';
-import Loader from '../components/Loader';
-import Images from '../components/Images';
-import Details from '../components/Details';
-import Pagination from '../components/Pagination';
-import Description from '../components/Description';
+import Name from '../components/name';
+import Links from '../components/links';
+import Navbar from '../components/navbar';
+import Loader from '../components/loader';
+import Images from '../components/images';
+import Details from '../components/details';
+import Pagination from '../components/pagination';
+import Description from '../components/description';
 
 class Comics extends React.Component {
    constructor(props) {
