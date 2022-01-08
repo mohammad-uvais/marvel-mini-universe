@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch, HashRouter } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Home from './pages/home.js';
 import Comics from './pages/comics.js';
@@ -11,7 +11,7 @@ import './App.css';
 class App extends React.Component {
    render() {
       return (
-         <HashRouter basename="/marvel-mini-universe">
+         <BrowserRouter>
             <Switch>
                <Route exact path='/' component={Home} />
                {/* <Route path='/about' component={About}/> */}
@@ -19,7 +19,7 @@ class App extends React.Component {
                <Route path='/comics' component={Comics} />
                <Route path='/contact' component={Connect} />
             </Switch>
-         </HashRouter>
+         </BrowserRouter>
       )
    }
 }

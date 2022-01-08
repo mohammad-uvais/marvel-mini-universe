@@ -6,8 +6,8 @@ function Navbar() {
             <ul className="navbar-nav">
                 <li className="nav-item">
                     <a
-                    href="/marvel-mini-universe/#/"
-                    className={window.location.hash === "#/" ? 'nav-link activ' : 'nav-link'}>
+                    href="/"
+                    className={window.location.pathname === "/" ? 'nav-link activ' : 'nav-link'}>
                         HOME
                     </a>
                 </li>
@@ -16,22 +16,22 @@ function Navbar() {
             </li> */}
                 <li className="nav-item">
                     <a
-                    href="/marvel-mini-universe/#/characters"
-                    className={window.location.hash === "#/characters" ? 'nav-link activ' : 'nav-link'}>
+                    href="/characters"
+                    className={window.location.pathname === "/characters" ? 'nav-link activ' : 'nav-link'}>
                         CHARACTERS
                     </a>
                 </li>
                 <li className="nav-item">
                     <a
-                    href="/marvel-mini-universe/#/comics"
-                    className={window.location.hash === "#/comics" ? 'nav-link activ' : 'nav-link'}>
+                    href="/comics"
+                    className={window.location.pathname === "/comics" ? 'nav-link activ' : 'nav-link'}>
                         COMICS
                     </a>
                 </li>
                 <li className="nav-item">
                     <a
-                    href="/marvel-mini-universe/#/contact"
-                    className={window.location.hash === "#/contact" ? 'nav-link activ' : 'nav-link'}>
+                    href="/contact"
+                    className={window.location.pathname === "/contact" ? 'nav-link activ' : 'nav-link'}>
                         CONNECT
                     </a>
                 </li>
