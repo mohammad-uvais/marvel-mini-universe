@@ -12,7 +12,7 @@ function Navbar() {
                     </a>
                 </li>
                 {/* <li className="nav-item">
-               <a className={window.location.pathname === "/about" ? 'nav-link activ' : 'nav-link'} href="/about">ABOUT</a>
+               <a className={location.pathname === "/about" ? 'nav-link activ' : 'nav-link'} href="/about">ABOUT</a>
             </li> */}
                 <li className="nav-item">
                     <a
