@@ -11,7 +11,7 @@ import './App.css';
 class App extends React.Component {
    render() {
       return (
-         <BrowserRouter basename='marvel-mini-universe.netlify.app'>
+         <BrowserRouter>
             <Switch>
                <Route exact path='/' component={Home} />
                {/* <Route path='/about' component={About}/> */}
